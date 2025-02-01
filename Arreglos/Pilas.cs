@@ -28,7 +28,7 @@
             string datos = string.Empty;
             foreach (string dato in _arreglo)
             {
-                datos += $"{dato},";
+                datos += $"{dato}";
             }
             return datos;
         }
