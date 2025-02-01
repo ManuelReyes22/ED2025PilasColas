@@ -13,23 +13,53 @@
 
         public void Agregar(string dato)
         {
-            _arreglo[_tope] = dato; 
-            _tope++;
+            try
+            {
+                if (_tope >= _arreglo.Length)
+                {
+                    throw new Exception("La pila esta llena");
+                }
+
+                _arreglo[_tope] = dato;
+                _tope++;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public void Eliminar()
         {
-            _tope--;
-            _arreglo[_tope] = null;
+            try
+            {
+                if (_tope <= 0)
+                {
+                    throw new Exception("ya no se pueden quitar mas elementos");
+                }
+
+                _tope--;
+                _arreglo[_tope] = null;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public string Imprimir()
         {
             string datos = string.Empty;
-            foreach (string dato in _arreglo)
+
+            for (int i = 0; i < _tope; i++)
             {
-                datos += $"{dato}";
+                string coma = (i == _tope - 1)
+                    ? ""
+                    : ",";
+
+                datos += _arreglo[i] + coma;
             }
+
             return datos;
         }
     }
