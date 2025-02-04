@@ -59,7 +59,6 @@
 
                 datos += _arreglo[i] + coma;
             }
-
             return datos;
         }
     }
