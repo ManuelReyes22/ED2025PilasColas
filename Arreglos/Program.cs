@@ -52,8 +52,8 @@
             cola.Eliminar();
             Console.WriteLine(cola.Imprimir());
 
-            cola.Agregar("z");
-            Console.WriteLine(cola.Imprimir());
+            //cola.Agregar("z");
+            //Console.WriteLine(cola.Imprimir());
         }
     }
 }

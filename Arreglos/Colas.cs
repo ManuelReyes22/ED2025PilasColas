@@ -1,33 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Arreglos
 {
     internal class Colas
     {
         private string[] _arreglo;
-        private int _tope;
+        private int _final; 
+        private int _inicio;
 
         public Colas(int elementos)
         {
             _arreglo = new string[elementos];
-            _tope = 0;
+            _final = 0;
+            _inicio = 0;
         }
 
-        public void Agregar(string dato2)
+        public void Agregar(string dato)
         {
             try
             {
-                if (_tope >= _arreglo.Length)
+                if (_final >= _arreglo.Length )
                 {
                     throw new Exception("La pila esta llena");
                 }
-                _arreglo[_tope] = dato2;
-                _tope++;
+                _arreglo[_final] = dato;
+                _final++;
 
             }
             catch (Exception ex)
@@ -40,15 +37,12 @@ namespace Arreglos
         {
             try
             {
-                if (_tope == 0)
+                if (_final == _inicio)
                 {
                     throw new Exception("La cola está vacía");
                 }
-                for (int i = 0; i < _tope - 1; i++)
-                {
-                    _arreglo[i] = _arreglo[i + 1];
-                }
-                _tope--;
+                _arreglo[_inicio] = null;
+                _inicio++;
             }
             catch (Exception ex)
             {
@@ -58,15 +52,15 @@ namespace Arreglos
 
         public string Imprimir()
         {
-            string datos2 = string.Empty;
+            string datos = string.Empty;
 
-            for (int i = 0; i < _tope; i++)
+            for (int i = _inicio; i < _final; i++)
             {
-                string coma = (i == _tope - 1) ? "" : ",";
-                datos2 += _arreglo[i] + coma;
+                string coma = (i == _final - 1) ? "" : ",";
+                datos += _arreglo[i] + coma;
             }
 
-            return datos2;
+            return datos;
         }
     }
 }
