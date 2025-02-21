@@ -7,7 +7,7 @@ namespace Listas
         {
             Console.WriteLine("Pilas");
 
-            Pilas pila = new Pilas(10);
+            Pilas pila = new Pilas();
             pila.Agregar("a");
             pila.Agregar("b");
             pila.Agregar("c");
@@ -39,7 +39,7 @@ namespace Listas
             /*------------------------------------------------------------*/
             Console.WriteLine("\nColas");
 
-            Colas cola = new Colas(1);
+            Colas cola = new Colas();
             cola.Agregar("a");
             cola.Agregar("b");
             cola.Agregar("c");

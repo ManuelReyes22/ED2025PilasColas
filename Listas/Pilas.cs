@@ -11,7 +11,7 @@ namespace Listas
     {
         private List<string> lista;
 
-        public Pilas(int elementos)
+        public Pilas()
         {
             lista = new List<string>();
         }

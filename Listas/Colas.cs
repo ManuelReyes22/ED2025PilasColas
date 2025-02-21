@@ -4,7 +4,7 @@
     {
         private List<string> lista;
 
-        public Colas(int elementos)
+        public Colas()
         {
             lista = new List<string>();
         }
